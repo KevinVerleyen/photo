@@ -12,6 +12,7 @@ import {
   IonCol,
   IonImg,
 } from '@ionic/angular/standalone';
+import { PhotoService } from '../services/photo.service';
 
 @Component({
   selector: 'app-tab2',
@@ -33,5 +34,9 @@ import {
   standalone: true,
 })
 export class Tab2Page {
-  constructor() {}
+  constructor(public photoService: PhotoService) {}
+
+  takePicture() {
+    this.photoService.addPhotoToGallery();
+  }
 }
